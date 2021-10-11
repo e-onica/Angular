@@ -1,0 +1,23 @@
+<mat-card class="example-card" >
+    <mat-card-header [ngClass]="{'smelly-cat':cat.likes < 0}">
+      <mat-card-title>{{cat.name}}</mat-card-title>
+      <mat-card-subtitle>{{cat.breed}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="cat.image" alt="Photo">
+    <mat-card-content>
+      <p>
+        {{cat.description}}
+
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="buttons-container">
+      <button mat-button (click)="increaseLikes()"><mat-icon>thumb_up</mat-icon></button>
+      <div>{{cat.likes}}
+        <p *ngIf="cat.likes > 10"> You rock!</p>
+      </div>
+      
+      <button mat-button (click)="decreaseLikes()"><mat-icon>thumb_down</mat-icon></button>
+    </div>
+    </mat-card-actions>
+  </mat-card>
